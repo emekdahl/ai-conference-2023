@@ -2,6 +2,45 @@
 # Gen AI & Vector DBs
 
 ## AI Summary
+  
+The notes discuss the challenges and solutions associated with using Large Language Models (LLMs) and vector databases in the context of Generative AI (GenAI).
+
+### LLM Challenges
+
+- Quality depends on training data.
+- Knowledge is static, based on when the model was trained.
+- Finite context windows can limit performance.
+- Hallucinations (incorrect or nonsensical outputs) are a concern.
+- Attribution and privacy are challenging in current workflows.
+
+### Solutions with RAG (Retrieval Augmented Generation)
+
+- Solves problems like attribution, privacy, and updating the model's knowledge base.
+
+### Vector Search and Databases
+
+- Vector search involves transforming semantic search input to vector embeddings.
+- Libraries like HNSW are used for building graph indexes.
+
+### Challenges in Vector DBs
+
+- Geometric filters are not always efficient.
+- Handling metadata is complex.
+- Index management can be inefficient and costly.
+- Scalability is a concern, and existing solutions like scatter-gather don't scale well.
+
+### Properties of a Good Vector Database
+
+- Should be geometry-aware.
+- Should have adaptive indexes.
+- Should allow controlled trade-offs between recall and cost.
+
+### Pinecone as a Solution
+
+- It's a self-serve vector search solution.
+- Allows creation, management, and scaling of indexes via API.
+- Offers high freshness, scalability, and low-latency queries.
+- Optimized for both performance and cost, with no need for manual tuning.
 
 ## Notes
 

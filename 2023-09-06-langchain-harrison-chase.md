@@ -4,7 +4,7 @@ https://github.com/langchain-ai/langsmith-sdk
 https://github.com/langchain-ai/langsmith-cookbook/tree/main
 https://docs.smith.langchain.com/
 # Building Context-Aware Applications with Langchain
-
+![[IMG_0099.jpeg]]
 ## AI Summary
 
 The notes focus on building context-aware applications using Langchain, a toolkit designed to integrate with GenAI models and other tools. There are four primary types of context-aware techniques:
@@ -46,6 +46,7 @@ The notes focus on building context-aware applications using Langchain, a toolki
 ## Context-Aware
 
 ### Four Different Types
+![[IMG_0100.jpeg]]
 
 #### Instruction Prompting
 
@@ -58,6 +59,8 @@ The notes focus on building context-aware applications using Langchain, a toolki
 - next level: select the most relevant examples to give dynamic prompting with the most appropriate examples
 
 #### Retrieval Augmented Generation (RAG)
+
+![[IMG_0102.jpeg]]
 
 - answer the question only based on the information that we've retrieved
 - grounding the language model in this context
@@ -73,13 +76,18 @@ The notes focus on building context-aware applications using Langchain, a toolki
 
 ###  Levels of Reasoning
 
+![[IMG_0103.jpeg]]
+
 #### LLM Call
+![[IMG_0104.jpeg]]
 
 - no context, single call
 - pros
 	- fast
 
 #### Chaining
+
+![[IMG_0105.jpeg]]
 
 - multiple calls or chains of calls
 - example:
@@ -88,16 +96,23 @@ The notes focus on building context-aware applications using Langchain, a toolki
 
 #### Routing
 
+![[IMG_0108.jpeg]]
+
+
 - the LLM determines which step is next, depending on the input
 	- may also determine whether to look things up in a private vector store vs. the internet
 - for example, GPT researcher has a reporting agent that falls into this category of reasoning
+![[IMG_0107.jpeg]]
 
 #### Automatons / State Machines
 
+![[IMG_0109.jpeg]]
 - this is where you start to see things called "agents."
+- ![[IMG_0110.jpeg]]
 - plan-and-execute agent in langchain is similar to BabyAGI
 	- the user passes an objective or task, which generates a list of prompts or sub-tasks that the agent manages
 	- similar to the Reflexion paper
+- ![[IMG_0111.jpeg]]
 - another example is sweep.dev
 	- inputs
 	- Search
@@ -108,14 +123,17 @@ The notes focus on building context-aware applications using Langchain, a toolki
 
 #### Autonomous Agents
 
+- ![[IMG_0113.jpeg]]
 - input > LLMs > Action > output
 - LLM is expected to shift between states implicitly vs. the automatons who run the plan execute validate loop explicitly
 
 
 ## Levels of Autonomy in State Machines
 
-
+- ![[IMG_0114.jpeg]]
 ## Challenges
+
+- ![[IMG_0115.jpeg]]
 
 - orchestration
 - data engineering
@@ -146,6 +164,8 @@ The notes focus on building context-aware applications using Langchain, a toolki
 
 
 ### Evaluation
+
+- ![[IMG_0116.jpeg]]
 
 - you don't necessarily start with a dataset, so you may not have actuals
 - sometimes, people use human labeling

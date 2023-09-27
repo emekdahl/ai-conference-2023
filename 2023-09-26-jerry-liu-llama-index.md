@@ -25,11 +25,16 @@ The notes underscore the importance of a well-thought-out approach to data manag
 
 ## Notes
 
+- ![[IMG_0117.jpeg]]
+
 ## Context
 
+ ![[IMG_0118.jpeg]]
 - how do we best augment LLMs with our own private data?
-
+![[IMG_0119.jpeg]]
 ### Paradigms for inserting knowledge
+
+ ![[IMG_0120.jpeg]]
 
 - fine-tuning - baking knowledge and reasoning into the weights of the network
 - RAG - retrieval augmentation
@@ -37,6 +42,8 @@ The notes underscore the importance of a well-thought-out approach to data manag
 	- fancy prompt engineering
 
 ## LlamaIndex
+
+ ![[IMG_0121.jpeg]]
 
 - data management and Query Engine for your LLM application
 - offers components across the data lifecycle
@@ -50,7 +57,7 @@ The notes underscore the importance of a well-thought-out approach to data manag
 - advantages
 	- build chat over any documents using llama_index in 3 lines of code
 
-
+ ![[IMG_0122.jpeg]]
 ## RAG stack
 
 ### The New ETL
@@ -64,11 +71,16 @@ The notes underscore the importance of a well-thought-out approach to data manag
 
 ### Current RAG stack (querying)
 
+ ![[IMG_0124.jpeg]]
+ ![[IMG_0123.jpeg]]
+
 - find top-k most similar chunks from the vector database collection
 - plug into the LLM response synthesis module
 
 
 ## Challenges with Naive RAG
+
+ ![[IMG_0126.jpeg]]
 
 - failure modes
 	- quality-related: hallucination, accuracy
@@ -84,12 +96,16 @@ The notes underscore the importance of a well-thought-out approach to data manag
 
 ## How do we handle these challenges?
 
+ ![[IMG_0127.jpeg]]
+
 - data: can we store additional information beyond the raw text chunks
 - embeddings - can we do better than using a pre-trained embedding model
 - retrieval - can we do anything better than top-k
 - synthesis: can we use the LLMs for more than generation
 
 ## Evaluation: Measuring Performance
+
+ ![[IMG_0128.jpeg]]
 
 - defining benchmarks
 - how do we properly evaluate a RAG system?
@@ -98,6 +114,8 @@ The notes underscore the importance of a well-thought-out approach to data manag
 - open question: what to do first?
 
 ### Evaluation in Isolation
+
+ ![[IMG_0129.jpeg]]
 
 - details: evaluate the quality of retrieved chunks given user query
 - collect dataset
@@ -112,8 +130,10 @@ The notes underscore the importance of a well-thought-out approach to data manag
 	- Prompt GPT_4 to generate questions from each chunk
 	- each question/chunk is now your eval pair
 
-
+ ![[IMG_0130.jpeg]]
 ### Evaluation E2E
+
+![[IMG_0131.jpeg]]
 
 - Details: evaluation of final generated response given input
 - collect dataset
@@ -125,8 +145,10 @@ The notes underscore the importance of a well-thought-out approach to data manag
 	- if labels: with-label evals
 
 #### Synthetic Dataset Generation for E2E Evals
-
+![[IMG_0132.jpeg]]
 ### LLM-based Evaluation Modules
+
+![[IMG_0133.jpeg]]
 
 - GPT-4 is an excellent human grader
 - label-free modules
@@ -136,16 +158,29 @@ The notes underscore the importance of a well-thought-out approach to data manag
 
 ## Techniques for Better Performing RAG
 
+![[IMG_0134.jpeg]]
 - decouple embeddings from raw text chunks
 	- beware of overfitting on the test set. Use validation and test set
+![[IMG_0135.jpeg]]
+![[IMG_0136.jpeg]]
 - small to big retrieval
 	- generally, relevance is higher when you chunk it smaller
 	- But then you may need the surrounding context 
 	- one challenge may be that you have the "lost in the middle" LLM problem, which is what happens when you widen the top k
+
+![[IMG_0137.jpeg]]
 - embedding references to text chunks
 	- embed references to text chunks instead of the text chunks directly
 		- but then do retrieval on the smaller chunks
 		- use the bigger chunk for synthesis
+![[IMG_0138.jpeg]]
 - organize your data for more structured retrieval
 	- summarize
+![[IMG_0139.jpeg]]
 - fine-tuning embeddings
+![[IMG_0140.jpeg]]
+
+
+![[IMG_0141.jpeg]]
+
+![[IMG_0142.jpeg]]
